@@ -25,10 +25,16 @@ public class Detail_DiscountInfoDao {
 		this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
 	}
 	
-	public List<Detail_DiscountInfo> getDiscountInfos(int id){
+	public List<Detail_DiscountInfo> getDiscountInfosA(int id){
 		Map<String, Integer> params = new HashMap<>();
 		params.put("id", id);
-		return this.jdbcTemplate.query(GET_DISCOUNT_INFOs, params, new Detail_DiscountInfoMapper());
+		return this.jdbcTemplate.query(GET_DISCOUNT_INFOs_A, params, new Detail_DiscountInfoMapper());
+	}
+	
+	public List<Detail_DiscountInfo> getDiscountInfosB(int id){
+		Map<String, Integer> params = new HashMap<>();
+		params.put("id", id);
+		return this.jdbcTemplate.query(GET_DISCOUNT_INFOs_B, params, new Detail_DiscountInfoMapper());
 	}
 	
 	class Detail_DiscountInfoMapper implements RowMapper<Detail_DiscountInfo>{

@@ -6,12 +6,15 @@ import kr.or.connect.reservation.dao.CommentDao;
 import kr.or.connect.reservation.dto.Comment;
 import kr.or.connect.reservation.dto.Detail;
 import kr.or.connect.reservation.dto.Detail_DiscountInfo;
+import kr.or.connect.reservation.dto.Promotion;
 import kr.or.connect.reservation.dao.DetailDao;
 import kr.or.connect.reservation.dao.Detail_DiscountInfoDao;
 import kr.or.connect.reservation.service.DetailService;
 import static kr.or.connect.reservation.service.DetailService.LIMIT;
 import kr.or.connect.reservation.dto.Route;
 import kr.or.connect.reservation.dao.RouteDao;
+import kr.or.connect.reservation.dto.Promotion;
+import kr.or.connect.reservation.dao.PromotionEtcDao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,9 @@ public class DetailServiceImpl implements DetailService {
 	
 	@Autowired
 	RouteDao routeDao;
+	
+	@Autowired
+	PromotionEtcDao promotionEtcDao;
 	
 	@Override
 	@Transactional
@@ -52,8 +58,16 @@ public class DetailServiceImpl implements DetailService {
 
 	@Override
 	@Transactional
-	public List<Detail_DiscountInfo> getDetial_DiscountInfos(int id) {
-		List<Detail_DiscountInfo> list = detail_DiscountInfoDao.getDiscountInfos(id);
+	public List<Detail_DiscountInfo> getDetial_DiscountInfos_A(int id) {
+		List<Detail_DiscountInfo> list = detail_DiscountInfoDao.getDiscountInfosA(id);
+		
+		return list;
+	}
+	
+	@Override
+	@Transactional
+	public List<Detail_DiscountInfo> getDetial_DiscountInfos_B(int id) {
+		List<Detail_DiscountInfo> list = detail_DiscountInfoDao.getDiscountInfosB(id);
 		
 		return list;
 	}
@@ -62,5 +76,10 @@ public class DetailServiceImpl implements DetailService {
 	@Transactional
 	public Route getRoute(int id) {
 		return routeDao.getRoute(id);
+	}
+
+	@Override
+	public Promotion getEtc(int id) {
+		return promotionEtcDao.getEtc(id);
 	}
 }

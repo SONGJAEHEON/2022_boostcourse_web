@@ -24,8 +24,8 @@
                     예약확인
                 </div>
             </nav>
-            <section>
-                <div id="order"></div>
+            <section id="${detail.id}">
+                <div id="order" value="1">1/2</div>
                 <img id="carousel_1" class="carousel img_mid" src="${detail.save_file_name}" alt="main image ${detail.id}">
                 <img id="carousel_2" class="carousel img_right" src="" alt="sub image ${detail.id}">
                 <img id="carousel_3" class="carousel" src="${detail.save_file_name}" alt="main image ${detail.id}">
@@ -40,13 +40,23 @@
                 <div id="event_tile" class="event_txt">&#127873; 이벤트 정보</div>
                 <div class="division_slim"></div>
                 <div id="event_info" class="event_txt">
-                <c:forEach items="${discount}" var="current" varStatus="status">
+                <c:forEach items="${discountA}" var="current" varStatus="status">
                 	<c:choose>
-                		<c:when test="${fn:length(discount) == status.count}">
-                			${current.price_type_name}석 ${current.discount_rate}% 할인
+                		<c:when test="${fn:length(discountA) == status.count}">
+                			${current.price_type_name}석 ${current.discount_rate}% 할인<br>
                 		</c:when>
                 		<c:otherwise>
                 			${current.price_type_name}석 ${current.discount_rate}%,
+                		</c:otherwise>
+                	</c:choose>
+                </c:forEach>
+                <c:forEach items="${discountB}" var="current" varStatus="status">
+                	<c:choose>
+                		<c:when test="${fn:length(discountB) == status.count}">
+                			${current.price_type_name}유형 ${current.discount_rate}% 할인
+                		</c:when>
+                		<c:otherwise>
+                			${current.price_type_name}유형 ${current.discount_rate}%,
                 		</c:otherwise>
                 	</c:choose>
                 </c:forEach>
@@ -55,31 +65,46 @@
             </section>
             <section id="review">
                 <div id="score">
-                    <div>예매자 한줄평</div>
+                    <div id="comment_score_title">예매자 한줄평</div>
                     <div id="comment_wrap">
                         <div id="star_wrap1">
                             <div id="star_wrap2">
                                 <img id="star_gray" src="img/spr_comment.png" alt="comment ratings">
-                                <div id="star_red_wrap">
+                                <div id="star_red_wrap" style="width:calc(${detail.score}/5.0*100%)">
                                     <img id="star_red" src="img/spr_comment.png" alt="comment ratings">
                                 </div>
                             </div>
                         </div>
-                        <div>${detail.score}/ 5.0</div>
-                        <span>${detail.count}</span><span>건 등록</span>
+                        <div id="score_flex">
+                            <div>
+                                <span id="score_bold">${detail.score}</span><span id="score_gray">/ 5.0</span>
+                            </div>
+                            <div>
+                                <span id="count_green">${detail.count}</span><span id="count_gray">건 등록</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="division_medium"></div>
                     <c:forEach items="${commentList}" var="item">
-                        <div>${item.description}</div>
-                        <div>${item.comment}</div>
-                        <div>${item.score}</div>
-                        <div>${item.reservation_email}</div>
-                        <div>${item.modify_date}</div>
-                        <img src="${item.save_file_name}" alt="comment image ${item.reservation_email}">
+                        <div class="one_comment">
+                            <div>
+                                <div class="comment_title">${item.description}</div>
+                                <div class="comment_quote">${item.comment}</div>
+                                <span class="comment_user_score">${item.score}</span>
+                                <span class="comment_user_id">| ${item.reservation_email}</span>
+                                <span class="comment_user_time">| ${item.modify_date}</span>
+                            </div>
+                            <div>
+                            	<c:if test="${not empty item.save_file_name}">
+                                	<img src="${item.save_file_name}" alt="comment image ${item.reservation_email}">
+                                </c:if>
+                            </div>
+                        </div>
                         <div class="division_slim"></div>
                     </c:forEach>
+                    <div id="comment_notice">&#x1F514; 네이버 예약을 통해 실제 방문한 이용자가 남긴 평가입니다.</div>
                 </div>
-                <button id="more_reviews"></button>
+                <button id="more_reviews">예매자 한줄평 더보기 &#x2192;</button>
             </section>
             <section id="more_info">
                 <div id="more_info_tab" class="container">
