@@ -1,6 +1,4 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-
+window.addEventListener('DOMContentLoaded', () => {
     document.getElementById("i0").style.borderColor = "#2db40d";
 
     var cnt = document.querySelector("#more").className;
@@ -124,6 +122,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     httpRequest.setRequestHeader('Content-Type', 'application/json');
     httpRequest.send(JSON.stringify(reqJson));
     }
+
+    document.getElementById("product_list").addEventListener('click', (evt)=>{
+        const product = evt.target.closest('.product');
+        if(product){
+            document.location.href = 'http://localhost:8080/reservation/product?id='+product.id;
+        }
+    })
 
     document.getElementById("more").addEventListener('click', ()=>{
         var httpRequest;

@@ -17,11 +17,8 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-import kr.or.connect.reservation.dao.CategoryDao.categoryMapper;
-import kr.or.connect.reservation.dto.Category;
 import kr.or.connect.reservation.dto.Display_info;
 
-import static kr.or.connect.reservation.dao.CategoryDaoSqls.SELECT_CATs;
 import static kr.or.connect.reservation.dao.Display_infoDaoSqls.*;
 
 @Repository
@@ -51,7 +48,7 @@ public class Display_infoDao {
 		public Display_info mapRow(ResultSet rs, int rowNum) throws SQLException{
 			Display_info di = new Display_info();
 			
-			di.setId(rs.getInt("product.id"));
+			di.setId(rs.getInt("display_info.id"));
 			di.setDescription(rs.getString("product.description"));
 			di.setContent(rs.getString("product.content"));
 			di.setPlace_name(rs.getString("display_info.place_name"));
