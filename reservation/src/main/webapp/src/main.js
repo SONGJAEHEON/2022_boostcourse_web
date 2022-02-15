@@ -126,7 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById("product_list").addEventListener('click', (evt)=>{
         const product = evt.target.closest('.product');
         if(product){
-            document.location.href = 'http://localhost:8080/reservation/product?id='+product.id;
+            window.location.href = 'http://localhost:8080/reservation/product?id='+product.id;
         }
     })
 

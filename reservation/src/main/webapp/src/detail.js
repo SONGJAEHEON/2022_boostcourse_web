@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     etcImageLoader();
     expandDescription();
+	moreReviews();
     moreInfoControl();
     moveTop();
 })
@@ -13,7 +14,6 @@ function etcImageLoader(){
         if(httpRequest.readyState === XMLHttpRequest.DONE){
             if(httpRequest.readyState == 4 && httpRequest.status === 200){
                 var obj = httpRequest.response;
-				console.log(obj);
                 //if(obj.img.length){
                     document.getElementById("order").style.display = "block";
                     document.querySelectorAll(".move").forEach((item)=>{
@@ -28,7 +28,7 @@ function etcImageLoader(){
             }
         }
     }
-    httpRequest.open('GET', 'http://localhost:8080/reservation/product/etcImage?id='+id);
+    httpRequest.open('GET', 'http://localhost:8080/reservation/product/etcImage?id='+id+'&score='+score+'&count='+count);
     httpRequest.responseType = 'json';
     httpRequest.send();
 }
@@ -40,7 +40,7 @@ function runCarousel(){
         var order = document.getElementById("order");
 
         array[std].className = "carousel img_right";
-        array[next].className = "carousel";
+        array[next].className = "carousel img_other";
         array[prev].className = "carousel img_mid";
         array[other].className = "carousel img_left";
         std = minusOne(std);
@@ -49,12 +49,12 @@ function runCarousel(){
         other = minusOne(other);
 
         setTimeout(() => {
-            if(order.value == 1){
-                order.value = 2;
+            if(order.className == "1"){
+                order.className = "2";
                 order.innerText = "2/2";
             }
             else{
-                order.value = 1;
+                order.className = "1";
                 order.innerText = "1/2";
             }
         }, 1000);
@@ -64,7 +64,7 @@ function runCarousel(){
 
         array[std].className = "carousel img_left";
         array[next].className = "carousel img_mid";
-        array[prev].className = "carousel";
+        array[prev].className = "carousel img_other";
         array[other].className = "carousel img_right";
         std = plusOne(std);
         next = plusOne(next);
@@ -72,12 +72,12 @@ function runCarousel(){
         other = plusOne(other);
 
         setTimeout(() => {
-            if(order.value == 1){
-                order.value = 2;
+            if(order.className == "1"){
+                order.className = "2";
                 order.innerText = "2/2";
             }
             else{
-                order.value = 1;
+                order.className = "1";
                 order.innerText = "1/2";
             }
         }, 1000);
@@ -99,6 +99,12 @@ function expandDescription(){
         var style = document.getElementById("description").style;
         style.overflow = "visible";
         style.height = "auto";
+    })
+}
+
+function moreReviews(){
+    document.getElementById("more_reviews").addEventListener('click', ()=>{
+        window.location.href = "http://localhost:8080/reservation/product/commentInfo?id="+document.getElementById("carousel_1").parentElement.id;
     })
 }
 

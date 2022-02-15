@@ -8,13 +8,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>main</title>
+        <title>${detail.id}</title>
         <link rel="shoftcut icon" href="img/favicon.ico">
         <link rel="stylesheet" href="src/detail.css" type="text/css">
+        <link rel="stylesheet" href="src/comment.css" type="text/css">
         <script src="src/detail.js"></script>
     </head>
     <body>
         <div>
+        	<div id="carousel_wrap">
             <nav>
                 <div id="home_icon" class="nav">N</div>
                 <div id="home" class="nav">
@@ -25,17 +27,18 @@
                 </div>
             </nav>
             <section id="${detail.id}">
-                <div id="order" value="1">1/2</div>
+                <div id="order" class="1">1/2</div>
                 <img id="carousel_1" class="carousel img_mid" src="${detail.save_file_name}" alt="main image ${detail.id}">
                 <img id="carousel_2" class="carousel img_right" src="" alt="sub image ${detail.id}">
-                <img id="carousel_3" class="carousel" src="${detail.save_file_name}" alt="main image ${detail.id}">
+                <img id="carousel_3" class="carousel img_other" src="${detail.save_file_name}" alt="main image ${detail.id}">
                 <img id="carousel_4" class="carousel img_left" src="" alt="sub image ${detail.id}">
                 <div id="move_left" class="move">&lt;</div>
                 <div id="move_right" class="move">&gt;</div>
                 <div id="title">${detail.description}</div>
-                <div id="description">${detail.content}</div>
-                <button id="expansion">펼쳐보기</button>
             </section>
+            </div>
+            <div id="description">${detail.content}</div>
+            <button id="expansion">펼쳐보기</button>
             <section id="event">
                 <div id="event_tile" class="event_txt">&#127873; 이벤트 정보</div>
                 <div class="division_slim"></div>
@@ -121,7 +124,7 @@
                     <div id="notice">
                         [공지사항]
                     </div>
-                    <img id="img_notice" src="" alt="">
+                    <img id="img_notice" src="${detail.save_file_name}" alt="notice image ${detail.id}">
                 </div>
                 <div id="more_info_tab_route">
                     <img id="route_map" src="${route.save_file_name}" alt="${route.place_name} map">

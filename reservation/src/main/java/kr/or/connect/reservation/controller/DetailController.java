@@ -49,4 +49,22 @@ public class DetailController {
 		
 		return map;
 	}
+	
+	@GetMapping(path="/product/commentInfo")
+	@ResponseBody
+	public String getCommentInfo(@RequestParam(value="id") int id, ModelMap model){
+		Detail detail = detailService.getDetail(id);
+
+		model.addAttribute("detail", detail);
+		
+		return "detailComment";
+	}
+	
+	@GetMapping(path="/product/commentList")
+	@ResponseBody
+	public List<Comment> getCommentList(@RequestParam(value="id") int id){
+		List<Comment> commentList = detailService.getComments(id, 0);
+
+		return commentList;
+	}
 }
