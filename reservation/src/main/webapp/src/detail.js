@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     etcImageLoader();
+    goHome();
     expandDescription();
 	moreReviews();
     moreInfoControl();
@@ -28,7 +29,7 @@ function etcImageLoader(){
             }
         }
     }
-    httpRequest.open('GET', 'http://localhost:8080/reservation/product/etcImage?id='+id+'&score='+score+'&count='+count);
+    httpRequest.open('GET', 'http://localhost:8080/reservation/product/etcImage?id='+id);
     httpRequest.responseType = 'json';
     httpRequest.send();
 }
@@ -92,6 +93,15 @@ function minusOne(arg){
 
 function plusOne(arg){
     return ++arg%4;
+}
+
+function goHome(){
+    document.getElementById("home").addEventListener('click', ()=>{
+        window.location.href = "http://localhost:8080/reservation/main";
+    })
+    document.getElementById("home_icon").addEventListener('click', ()=>{
+        window.location.href = "http://localhost:8080/reservation/main";
+    })
 }
 
 function expandDescription(){

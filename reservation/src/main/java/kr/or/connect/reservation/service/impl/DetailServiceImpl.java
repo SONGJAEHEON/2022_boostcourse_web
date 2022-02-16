@@ -79,6 +79,7 @@ public class DetailServiceImpl implements DetailService {
 	}
 
 	@Override
+	@Transactional
 	public Promotion getEtc(int id) {
 		return promotionEtcDao.getEtc(id);
 	}

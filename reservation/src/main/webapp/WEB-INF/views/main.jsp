@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>main</title>
-        <link rel="shoftcut icon" href="img/favicon.ico">
+        <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="stylesheet" href="src/main.css" type="text/css">
         <script src="src/main.js"></script>
     </head>

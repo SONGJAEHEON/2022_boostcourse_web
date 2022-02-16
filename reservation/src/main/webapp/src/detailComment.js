@@ -8,13 +8,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function commentLoad(){
     var httpRequest;
-    var id = document.getElementById("title").innerText;
+    var id = document.getElementById("whole_wrap").parentElement.id;
     httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = () => {
         if(httpRequest.readyState === XMLHttpRequest.DONE){
             if(httpRequest.readyState == 4 && httpRequest.status === 200){
                 var obj = httpRequest.response;
-
                 
             }
         }

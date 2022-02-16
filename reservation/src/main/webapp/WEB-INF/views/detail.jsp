@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>${detail.id}</title>
-        <link rel="shoftcut icon" href="img/favicon.ico">
+        <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="stylesheet" href="src/detail.css" type="text/css">
         <link rel="stylesheet" href="src/comment.css" type="text/css">
         <script src="src/detail.js"></script>

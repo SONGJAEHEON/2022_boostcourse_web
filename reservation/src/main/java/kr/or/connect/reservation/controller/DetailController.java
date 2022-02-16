@@ -51,7 +51,6 @@ public class DetailController {
 	}
 	
 	@GetMapping(path="/product/commentInfo")
-	@ResponseBody
 	public String getCommentInfo(@RequestParam(value="id") int id, ModelMap model){
 		Detail detail = detailService.getDetail(id);
 
