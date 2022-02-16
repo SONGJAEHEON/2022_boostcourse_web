@@ -23,8 +23,8 @@ public class PromotionEtcDao {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	public Promotion getEtc(int id) {
-		return this.jdbcTemplate.queryForObject(GET_ETC, new promotionMapper(), id);
+	public List<Promotion> getEtc(int id) {
+		return this.jdbcTemplate.query(GET_ETC, new promotionMapper(), id);
 	}
 	
 	class promotionMapper implements RowMapper<Promotion>{

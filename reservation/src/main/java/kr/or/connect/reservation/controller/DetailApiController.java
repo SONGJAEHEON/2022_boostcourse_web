@@ -29,13 +29,22 @@ public class DetailApiController {
 	
 	
 //	@GetMapping(path="/api/products/{displayInfoId}")
-	@GetMapping(path="/detail/route")
-	public Map<String, Route> getRoute(@RequestParam(value="id") int id){
+	@GetMapping(path="/detailApi")
+	public Map<String, Object> getRoute(@RequestParam(value="id") int id){
+		Map<String, Object> map = new HashMap<>();
+		
+		Detail detail = detailService.getDetail(id);
+		List<Detail_DiscountInfo> discountListA = detailService.getDetial_DiscountInfos_A(id);
+		List<Detail_DiscountInfo> discountListB = detailService.getDetial_DiscountInfos_B(id);
+		List<Comment> commentList = detailService.getComments(id, 0);
 		Route route = detailService.getRoute(id);
 		
-		Map<String, Route> map = new HashMap<>();
+		map.put("detail", detail);
+		map.put("discountA", discountListA);
+		map.put("discountB", discountListB);
+		map.put("commentList", commentList);
 		map.put("route", route);
-		
+
 		return map;
 	}
 }

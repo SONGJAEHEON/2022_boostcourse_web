@@ -43,8 +43,8 @@ public class DetailController {
 	
 	@GetMapping(path="/product/etcImage")
 	@ResponseBody
-	public Map<String, Promotion> getEtc(@RequestParam(value="id") int id){
-		Map<String, Promotion> map = new HashMap<>();
+	public Map<String, List<Promotion>> getEtc(@RequestParam(value="id") int id){
+		Map<String, List<Promotion>> map = new HashMap<>();
 		map.put("img", detailService.getEtc(id));
 		
 		return map;
@@ -53,8 +53,10 @@ public class DetailController {
 	@GetMapping(path="/product/commentInfo")
 	public String getCommentInfo(@RequestParam(value="id") int id, ModelMap model){
 		Detail detail = detailService.getDetail(id);
-
+		List<Comment> commentList = detailService.getComments(id, 0);
+		
 		model.addAttribute("detail", detail);
+		model.addAttribute("commentList", commentList);
 		
 		return "detailComment";
 	}

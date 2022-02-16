@@ -1,3 +1,17 @@
+.division_slim{
+    margin: 0% 5%;
+    width: 90%;
+    height: 3px;
+    background-color: lightgray;
+}
+
+.division_medium{
+    margin: 0% 5%;
+    width: 90%;
+    height: 6px;
+    background-color: lightgray;    
+}
+
 #score{
     padding: 20px;
     background-color: white;

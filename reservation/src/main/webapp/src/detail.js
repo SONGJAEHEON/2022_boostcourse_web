@@ -15,17 +15,17 @@ function etcImageLoader(){
         if(httpRequest.readyState === XMLHttpRequest.DONE){
             if(httpRequest.readyState == 4 && httpRequest.status === 200){
                 var obj = httpRequest.response;
-                //if(obj.img.length){
+                if(obj.img.length){
                     document.getElementById("order").style.display = "block";
                     document.querySelectorAll(".move").forEach((item)=>{
                         item.style.display = "block";
                     })
-                    document.getElementById("carousel_2").src = obj.img.save_file_name; 
-                    document.getElementById("carousel_4").src = obj.img.save_file_name; 
+                    document.getElementById("carousel_2").src = obj.img[0].save_file_name; 
+                    document.getElementById("carousel_4").src = obj.img[0].save_file_name; 
                     // document.getElementById("carousel_2").style.display = "block";
                     // document.getElementById("carousel_4").style.display = "block";
                     runCarousel();
-                //}
+                }
             }
         }
     }

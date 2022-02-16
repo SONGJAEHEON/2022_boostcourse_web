@@ -47,23 +47,42 @@
     </div>
 
     <script id="comment-template" type="text/x-handlebars-template">
-        <c:forEach items="${commentList}" var="item">
-            <div class="one_comment">
-                <div>
-                    <div class="comment_title">${item.description}</div>
-                    <div class="comment_quote">${item.comment}</div>
-                    <span class="comment_user_score">${item.score}</span>
-                    <span class="comment_user_id">| ${item.reservation_email}</span>
-                    <span class="comment_user_time">| ${item.modify_date}</span>
-                </div>
-                <div>
-                    <c:if test="${not empty item.save_file_name}">
-                        <img src="${item.save_file_name}" alt="comment image ${item.reservation_email}">
-                    </c:if>
-                </div>
+        <div class="one_comment">
+            <div>
+                <div class="comment_title">{{description}}</div>
+                <div class="comment_quote">{{comment}}</div>
+                <span class="comment_user_score">{{score}}</span>
+                <span class="comment_user_id">| {{reservation_email}}</span>
+                <span class="comment_user_time">| {{modify_date}}</span>
             </div>
-            <div class="division_slim"></div>
-        </c:forEach>
+            <div>
+                {{#if save_file_name}}
+                <img src="../{{save_file_name}}" alt="comment image {{item.reservation_email}}">
+				{{/if}}
+            </div>
+        </div>
+        <div class="division_slim"></div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var template = document.querySelector("#comment-template").innerText;
+        var bindTemplate = Handlebars.compile(template);
+        //var resultHtml = "";
+        //var obj = "${commentList}";
+        // <c:forEach items="${commentList}" var="item">
+        // 	console.log(item);
+		// 	resultHtml += bindTemplate(item);
+        // </c:forEach>
+
+        //var obj2 = "${detail.description}";
+        //obj.forEach(function(item, index){
+        //resultHtml += bindTemplate(item);
+        //})
+        //var div = document.createElement("div");
+        //div.innerHTML = resultHtml;
+        //var node = document.querySelector("#comment_notice");
+        //node.parentNode.insertBefore(div, node);
+        //document.querySelector("#comment_notice").insertBefore(resultHtml);
     </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ import kr.or.connect.reservation.dto.Promotion;
 public interface DetailService {
 	public static final int LIMIT = 3;
 	public Detail getDetail(int id);
-	public Promotion getEtc(int id);
+	public List<Promotion> getEtc(int id);
 	public List<Detail_DiscountInfo> getDetial_DiscountInfos_A(int id);
 	public List<Detail_DiscountInfo> getDetial_DiscountInfos_B(int id);
 	public List<Comment> getComments(int id, int cnt);
