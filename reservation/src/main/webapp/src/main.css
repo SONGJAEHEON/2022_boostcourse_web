@@ -109,6 +109,7 @@ nav{
 .cat:hover{
     text-decoration: underline;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #cat_num{
@@ -146,6 +147,7 @@ nav{
     margin: 10px;
     padding: 10px;
     background-color: white;
+    cursor: pointer;
 }
 
 .product_img{
@@ -206,6 +208,7 @@ nav{
 #more:hover{
     text-decoration: underline;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #top{
@@ -222,7 +225,8 @@ nav{
 
 #top:hover{
     text-decoration: underline;
-    font-weight: bold;  
+    font-weight: bold;
+    cursor: pointer;
 }
 
 footer{

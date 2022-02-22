@@ -43,6 +43,7 @@ nav{
     font-size: 1.4em;
     font-weight: bold;
     color: white;
+    cursor: pointer;
     /* color:rgb(7, 158, 40); */
     /* background-color: white; */
 }
@@ -50,6 +51,7 @@ nav{
 #home{
     font-weight: bold;
     font-size: 1.4em;
+    cursor: pointer;
 }
 
 #email{
@@ -109,6 +111,7 @@ nav{
     color: white;
     z-index: 105;;
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .move:hover{
@@ -164,6 +167,7 @@ nav{
     margin: 0px;
     padding: 6px;
     font-size: 1.4em;
+    cursor: pointer;
 }
 
 #event{
@@ -178,9 +182,6 @@ nav{
 
 #make_reservation{
     margin: 5px 0px;
-}
-
-#make_reservation{
     height: 50px;
     padding: 6px;
     text-align: center;
@@ -192,7 +193,8 @@ nav{
 #make_reservation:hover{
     text-decoration: underline;
     font-weight: bold;
-    background-color: #2dc40d;
+    background-color: #2dc40d; 
+    cursor: pointer;
 }
 
 #more_info{
@@ -223,6 +225,7 @@ nav{
 .flex_item:hover{
     text-decoration: underline;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #more_info_tab_details{
@@ -288,11 +291,13 @@ nav{
     font-size: 1.1em;
     background-color: lightgray;
     border: none;
+    cursor: pointer;
 }
 
 #top:hover{
     text-decoration: underline;
     font-weight: bold;  
+    cursor: pointer;
 }
 
 footer{
