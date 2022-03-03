@@ -1,6 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById("i0").style.borderColor = "#2db40d";
 
+    document.getElementById("email").addEventListener('click', (evt)=>{
+        window.location.href = "account";
+    })
+
     var cnt = document.querySelector("#more").className;
     var total = document.querySelector("#total").innerText;
     if(cnt == total){

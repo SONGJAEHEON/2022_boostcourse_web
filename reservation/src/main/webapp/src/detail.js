@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
     etcImageLoader();
     goHome();
     expandDescription();
+	makeReservation();
 	moreReviews();
     moreInfoControl();
     moveTop();
@@ -109,6 +110,13 @@ function expandDescription(){
         var style = document.getElementById("description").style;
         style.overflow = "visible";
         style.height = "auto";
+    })
+}
+
+function makeReservation(){
+    document.getElementById("make_reservation").addEventListener('click', ()=>{
+        var id = document.getElementById("carousel_1").parentElement.id;
+        window.location.href = "http://localhost:8080/reservation/makingReservation?id=" + id;
     })
 }
 

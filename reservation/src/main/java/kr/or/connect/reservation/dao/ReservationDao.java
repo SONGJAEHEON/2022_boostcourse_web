@@ -2,6 +2,7 @@ package kr.or.connect.reservation.dao;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -35,7 +36,15 @@ public class ReservationDao {
 			
 			rv.setDescription(rs.getString("description"));
 			rv.setLowPrice(rs.getInt("price"));
-			rv.setOpeningHour(rs.getString("opening_hours"));
+			String str = rs.getString("opening_hours");
+			StringTokenizer stk = new StringTokenizer(str, "\n");
+			rv.setOpeningHour1(stk.nextToken());
+			try {
+				str = stk.nextToken();
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+			rv.setOpeningHour2(str);
 			rv.setPlaceLot(rs.getString("place_lot"));
 			rv.setPlaceStreet(rs.getString("place_street"));
 			rv.setReservationCnt(rs.getInt("cnt"));

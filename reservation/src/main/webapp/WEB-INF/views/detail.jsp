@@ -22,9 +22,14 @@
                 <div id="home" class="nav">
                     예약
                 </div>
-                <div id="email" class="nav">
-                    예약확인
-                </div>
+                <c:choose>
+                    <c:when test="${sessionScope.account != null}">
+                        <div id="email" class="nav">${sessionScope.account}</div>
+                    </c:when>
+                    <c:otherwise>
+                        <div id="email" class="nav">예약확인</div>
+                    </c:otherwise>
+                </c:choose>
             </nav>
             <section id="${detail.id}">
                 <div id="order" class="1">1/2</div>
