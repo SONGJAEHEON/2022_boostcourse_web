@@ -35,6 +35,7 @@ public class ReservationDao {
 			Reservation rv = new Reservation();
 			
 			rv.setDescription(rs.getString("description"));
+			rv.setFileName(rs.getString("save_file_name"));
 			rv.setLowPrice(rs.getInt("price"));
 			String str = rs.getString("opening_hours");
 			StringTokenizer stk = new StringTokenizer(str, "\n");

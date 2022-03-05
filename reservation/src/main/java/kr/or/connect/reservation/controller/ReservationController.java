@@ -22,6 +22,7 @@ public class ReservationController {
 		Reservation reservation = reservationService.getReservationInfo(id);
 		List<Detail_DiscountInfo> discountList = reservationService.getRservationInfo_DiscountInfo(id);
 		
+		model.put("id", id);
 		model.put("reservation", reservation);
 		model.put("list", discountList);
 		

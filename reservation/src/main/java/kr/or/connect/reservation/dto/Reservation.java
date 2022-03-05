@@ -2,6 +2,7 @@ package kr.or.connect.reservation.dto;
 
 public class Reservation {
 	private String description;
+	private String fileName;
 	private int lowPrice;
 	private String openingHour1;
 	private String openingHour2;
@@ -14,6 +15,12 @@ public class Reservation {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 	public int getLowPrice() {
 		return lowPrice;

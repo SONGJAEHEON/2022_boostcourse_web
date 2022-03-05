@@ -9,12 +9,42 @@ body{
 }
 
 body>div{
-  width: 500px;
-  padding: 40px;
-  background-color: lightgray;
+  width: 600px;
+  background-color: white;
 }
 
-hr{
+#back{
+  position: absolute;
+  font-size: 1.2em;
+}
+
+#name{
+  width: 100%;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+#image{
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+}
+
+#image>img{
+  margin: -100px 0px 0px 0px;
+  width: 100%;
+  opacity: 50%;
+}
+
+#title{
+  position: absolute;
+  top: 340px;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+}
+
+/* hr{
   height: 3px;
   background-color: rgb(180,180,180);
   border: none;
@@ -97,4 +127,4 @@ hr{
   color: #2db40d;
   background-color: white;
   border: 2px solid #2db40d;
-}
+} */

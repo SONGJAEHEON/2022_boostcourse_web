@@ -7,19 +7,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>${reservation.id} 예약하기</title>
+    <title>${requestScope.id} 예약하기</title>
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="src/makeReservation.css" type="text/css">
     <script src="src/makeReservation.js"></script>
 </head>
-<body id="${reservation.id}"}>
+<body id="${requestScope.id}"}>
     <div>
         <nav>
-            <span id="back">&#8592;</span>
-            <span id="name">${reservation.description}</span>
+            <div id="back">&#8592;</div>
+            <div id="name">${reservation.description}</div>
         </nav>
         <section id="image">
-            <img src="${reservation.save_file_name}" alt="${reservation.save_file_name} image">
+            <img src="${reservation.fileName}" alt="${reservation.fileName} image">
             <div id="title">${reservation.description}</div>
         </section>
         <section id="user_info_form">
