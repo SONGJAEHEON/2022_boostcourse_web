@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.or.connect.reservation.service.ReservationService;
 import kr.or.connect.reservation.dto.Reservation;
-import kr.or.connect.reservation.dto.Detail_DiscountInfo;
+import kr.or.connect.reservation.dto.Price;
 
 @Controller
 public class ReservationController {
@@ -20,11 +20,11 @@ public class ReservationController {
 	@GetMapping(path="/makingReservation")
 	public String makeReservation(@RequestParam(value="id", required=true)int id, ModelMap model) {
 		Reservation reservation = reservationService.getReservationInfo(id);
-		List<Detail_DiscountInfo> discountList = reservationService.getRservationInfo_DiscountInfo(id);
+		List<Price> priceList = reservationService.getRservationInfo_PriceInfo(id);
 		
 		model.put("id", id);
 		model.put("reservation", reservation);
-		model.put("list", discountList);
+		model.put("list", priceList);
 		
 		return "makeReservation";
 	}

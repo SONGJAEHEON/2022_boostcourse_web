@@ -34,6 +34,7 @@ public class ReservationDao {
 		public Reservation mapRow(ResultSet rs, int rowNum) throws SQLException{
 			Reservation rv = new Reservation();
 			
+			rv.setId(rs.getInt("id"));
 			rv.setDescription(rs.getString("description"));
 			rv.setFileName(rs.getString("save_file_name"));
 			rv.setLowPrice(rs.getInt("price"));
@@ -48,7 +49,8 @@ public class ReservationDao {
 			rv.setOpeningHour2(str);
 			rv.setPlaceLot(rs.getString("place_lot"));
 			rv.setPlaceStreet(rs.getString("place_street"));
-			rv.setReservationCnt(rs.getInt("cnt"));
+			rv.setReservationCnt(3000 - rs.getInt("cnt"));
+			rv.setFileName(rs.getString("save_file_name"));
 			
 			return rv;
 		}

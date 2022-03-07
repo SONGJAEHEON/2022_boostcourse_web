@@ -38,10 +38,64 @@ body>div{
 
 #title{
   position: absolute;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  width: 600px;
+  top: 300px;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+}
+
+#krw{
+  position: absolute;
+  width: 600px;
+  top: 340px;
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  font-size: 1em;
+}
+
+#time_left{
+  position: absolute;
+  margin-left: 100px;
+  width: 400px;
+  top: 360px;
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  font-size: 1em;
+}
+
+#detail{
+  padding: 0px 5% 5% 5%;
+}
+
+.bold{
+  margin: 30px 0px 10px 0px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.normal{
+  font-size: 1.1em;
+}
+
+.hidden{
+  display: none;
+=======
   top: 340px;
   text-align: center;
   color: white;
   font-size: 1em;
+>>>>>>> branch 'master' of https://github.com/SONGJAEHEON/2022_boostcourse_web.git
+=======
+  top: 340px;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+>>>>>>> branch 'master' of https://github.com/SONGJAEHEON/2022_boostcourse_web.git
 }
 
 /* hr{
