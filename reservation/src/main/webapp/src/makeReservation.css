@@ -26,6 +26,7 @@ body>div{
 
 #image{
   overflow: hidden;
+  transform-style: 3d-preserve;
   width: 100%;
   height: 400px;
 }
@@ -33,13 +34,22 @@ body>div{
 #image>img{
   margin: -100px 0px 0px 0px;
   width: 100%;
-  opacity: 50%;
+  opacity: 0.7;
+}
+
+#image>#gray_back{
+  position: absolute;
+  z-index: 10;
+  width: 600px;
+  height: 400px;
+  background-color: gray;
+  opacity: 0.6;
+  
 }
 
 #title{
   position: absolute;
-<<<<<<< HEAD
-<<<<<<< HEAD
+  z-index: 11;
   width: 600px;
   top: 300px;
   text-align: center;
@@ -49,6 +59,7 @@ body>div{
 
 #krw{
   position: absolute;
+  z-index: 11;
   width: 600px;
   top: 340px;
   text-align: center;
@@ -59,6 +70,7 @@ body>div{
 
 #time_left{
   position: absolute;
+  z-index: 11;
   margin-left: 100px;
   width: 400px;
   top: 360px;
@@ -84,18 +96,99 @@ body>div{
 
 .hidden{
   display: none;
-=======
-  top: 340px;
+}
+
+#row_flex{
+  display: flex;
+  padding: 2% 5%;
+  justify-content: space-between;
+}
+
+#col_flex{
+  display: flex;
+  flex-direction: column;
+}
+
+#col_flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.price_type{
+  font-weight: bold;
+}
+
+.price_price{
+  font-weight: bold;
+}
+
+.price_discount{
+  color: gray;
+}
+
+table{
+  table-layout: fixed;
+  width: 150px;
+  height: 50px;
+  border-collapse: collapse;
   text-align: center;
+  font-size: 1.3em;
+}
+
+table td{
+  border: 2px solid gray;
+}
+
+.minus{
+  color: gray;
+}
+
+.cnt{
+  color: gray;
+}
+
+.plus{
   color: white;
-  font-size: 1em;
->>>>>>> branch 'master' of https://github.com/SONGJAEHEON/2022_boostcourse_web.git
-=======
-  top: 340px;
-  text-align: center;
-  color: white;
-  font-size: 1em;
->>>>>>> branch 'master' of https://github.com/SONGJAEHEON/2022_boostcourse_web.git
+  background-color: #2db40d;
+}
+
+.price_sum{
+  text-align: right;
+}
+
+#user_info_form{
+  padding: 2% 5%;
+}
+
+#user_info_form_flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.info_bold{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.info_small_gray{
+  font-size: 0.9em;
+  color: gray;
+}
+
+.form_line_flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+}
+
+#reservation_form label{
+  color: gray;
+}
+
+#reservation_form input{
+  width: 80%;
+  height: 80%;
 }
 
 /* hr{

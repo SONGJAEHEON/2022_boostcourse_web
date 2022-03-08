@@ -19,6 +19,7 @@
             <div id="name">${reservation.description}</div>
         </nav>
         <section id="image">
+            <div id="gray_back"></div>
             <img src="${reservation.fileName}" alt="${reservation.fileName} image">
             <div id="title">${reservation.description}</div>
             <div id="krw">&#x20A9;${reservation.lowPrice}~</div>
@@ -59,31 +60,37 @@
                 <div class="hidden">
                     ${item.price}
                 </div>
-                <div>
-                    ${item.type} 유형
-                </div>
-                <div>
-                    ${item.price} 원
-                </div>
-                <div>
-                    ${item.price}원 (${item.discount_rate}% 할인가)
-                </div>
-                <table>
-                    <tr>
-                        <td class="minus">-</td>
-                        <td class="cnt">0</td>
-                        <td class="plus">+</td>
-                    </tr>
-                </table>
-                <div>
-                    <span>0</span>원
+                <div id="row_flex">
+                    <div id="col_flex">
+                        <div class="price_type">
+                            ${item.type} 유형
+                        </div>
+                        <div class="price_price">
+                            ${item.price} 원
+                        </div>
+                        <div class="price_discount">
+                            ${item.price}원 (${item.discount_rate}% 할인가)
+                        </div>
+                    </div>
+                    <div id="col_flex2">
+                        <table>
+                            <tr>
+                                <td class="minus">-</td>
+                                <td class="cnt">0</td>
+                                <td class="plus">+</td>
+                            </tr>
+                        </table>
+                        <div class="price_sum">
+                            <span>0</span>원
+                        </div>
+                    </div>
                 </div>
             </c:forEach>
         </section>
         <section id="user_info_form">
             <div id="user_info_form_flex">
-                <div>예매자 정보</div>
-                <div class="small_gray">&#9989;필수입력</div>
+                <div class="info_bold">예매자 정보</div>
+                <div class="info_small_gray">&#9989;필수입력</div>
             </div>
             <form id="reservation_form" action="/makeReservation" method="POST">
                 <div class="form_line_flex">
@@ -98,7 +105,7 @@
                     <label for="email">&#9989;이메일</label>
                     <input type="email" name="email" id="form_email" value="crong@codesquad.kr" required>
                 </div>
-                <span>예매내용</span>
+                <label>예매내용</label>
             </form>
         </section>
         <section id="user_terms">
