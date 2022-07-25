@@ -8,9 +8,9 @@ body{
 }
 
 body > div{
-    position: absolute;
-    margin-left: 30%;
-    margin-right: 30%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     width: 600px;
     background-color: lightgray;
 }
@@ -86,7 +86,8 @@ nav{
 #cat{
     margin-bottom: 3px;
     background-color: white;
-  
+    display: flex;
+	justify-content: space-around;
 }
 
 .cat{

@@ -8,9 +8,9 @@ body{
 }
 
 body>div{
-    /* position: absolute; */
-    margin-left: 30%;
-    margin-right: 30%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     width: 600px;
     background-color: lightgray;
 }
@@ -60,11 +60,20 @@ nav{
     font-size: 1.2em;
 }
 
+#orderFlex{
+	display: flex;
+	justify-content: center;
+	position: absolute;
+    display: none;
+    width: 100%;
+    top: 100px;
+}
+
 #order{
-    position: absolute;
+    /*position: absolute;
     display: none;
     top: 100px;
-    left: 290px;
+    left: 290px;*/
     width: 50px;
     font-size: 1.2em;
     font-weight: bold;
@@ -104,12 +113,20 @@ nav{
 	display: none;
 }
 
+#titleFlex{
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	z-index: 105;
+	width: 100%;
+	top: 270px;
+	font-size: 3em;
+	color: white;
+}
+
 .move{
-    top: 270px;
-    font-size: 3em;
+    display: none;
     font-weight: bold;
-    color: white;
-    z-index: 105;;
     opacity: 0.6;
     cursor: pointer;
 }
@@ -119,30 +136,9 @@ nav{
 	opacity: 0.8;
 }
 
-#move_left{
-    position: absolute;
-    z-index: 910;
-    display: none;
-    font-size: 3em;
-}
-
-#move_right{
-    position: absolute;
-    z-index: 910;
-    display: none;
-    left: 565px;
-}
-
 #title{
-    position: absolute;
-    z-index: 105;
-    top: 260px;
-    left: 50px;
-    width: 500px;
     text-align: center;
-    font-size: 3em;
     word-break: keep-all;
-    color: white;
 }
 
 #description{

@@ -3,7 +3,6 @@ package kr.or.connect.reservation.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry; //CORS
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -41,14 +40,5 @@ public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
         resolver.setPrefix("/WEB-INF/views/");
         resolver.setSuffix(".jsp");
         return resolver;
-    }
-    
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS", "PATCH")
-                .allowedHeaders("access_token","Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method")
-                .exposedHeaders("Access-Control-Allow-Headers", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
-                .allowCredentials(true).maxAge(3600L);
     }
 }

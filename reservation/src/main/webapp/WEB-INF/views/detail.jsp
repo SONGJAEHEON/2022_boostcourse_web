@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>${detail.id}</title>
+        <title>detail #${detail.id}</title>
         <link rel="shortcut icon" href="img/favicon.ico">
         <link rel="stylesheet" href="src/detail.css" type="text/css">
         <link rel="stylesheet" href="src/comment.css" type="text/css">
@@ -32,14 +32,20 @@
                 </c:choose>
             </nav>
             <section id="${detail.id}">
-                <div id="order" class="1">1/2</div>
+            	<div id="orderFlex">
+            		<div> </div>
+                	<div id="order" class="1">1/2</div>
+                	<div> </div>
+            	</div>
                 <img id="carousel_1" class="carousel img_mid" src="${detail.save_file_name}" alt="main image ${detail.id}">
                 <img id="carousel_2" class="carousel img_right" src="" alt="sub image ${detail.id}">
                 <img id="carousel_3" class="carousel img_other" src="${detail.save_file_name}" alt="main image ${detail.id}">
                 <img id="carousel_4" class="carousel img_left" src="" alt="sub image ${detail.id}">
-                <div id="move_left" class="move">&lt;</div>
-                <div id="move_right" class="move">&gt;</div>
-                <div id="title">${detail.description}</div>
+                <div id="titleFlex">
+                	<div id="move_left" class="move">&lt;</div>
+                	<div id="title">${detail.description}</div>
+                	<div id="move_right" class="move">&gt;</div>
+                </div>
             </section>
             </div>
             <div id="description">${detail.content}</div>

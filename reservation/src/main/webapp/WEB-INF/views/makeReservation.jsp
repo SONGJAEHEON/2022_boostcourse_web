@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>${requestScope.id} 예약하기</title>
+    <title>상품 ${requestScope.id} 예약하기</title>
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="src/makeReservation.css" type="text/css">
     <script src="src/makeReservation.js"></script>
@@ -94,23 +94,40 @@
             </div>
             <form id="reservation_form" action="/makeReservation" method="POST">
                 <div class="form_line_flex">
-                    <label for="name">&#9989;예매자</label>
+                    <div class="green_check_wrap">
+                        <img class="green_check" src="img/spr_book.png" alt="green check">
+                    </div>
+                    <label for="name">예매자</label>
                     <input type="text" name="name" id="form_name" value="네이버" required>
                 </div>
                 <div class="form_line_flex">
-                    <label for="tel">&#9989;연락처</label>
+                    <div class="green_check_wrap">
+                        <img class="green_check" src="img/spr_book.png" alt="green check">
+                    </div>
+                    <label for="tel">연락처</label>
                     <input type="tel" name="tel" id="form_tel" value="휴대폰 입력 시 예매내용 문자발송"  pattern="01[0-9]-[0-9]{4}-[0-9]{4}" required>
                 </div>
                 <div class="form_line_flex">
-                    <label for="email">&#9989;이메일</label>
+                    <div class="green_check_wrap">
+                        <img class="green_check" src="img/spr_book.png" alt="green check">
+                    </div>
+                    <label for="email">이메일</label>
                     <input type="email" name="email" id="form_email" value="crong@codesquad.kr" required>
                 </div>
-                <label>예매내용</label>
+                <div class="form_line_flex">
+                    <div class="green_check_wrap">
+                        <img class="blank_check" src="img/spr_book.png" alt="green check">
+                    </div>
+                    <label>예매내용</label>
+                </div>
             </form>
         </section>
         <section id="user_terms">
             <div>
-                <div>
+                <div class="term_title_flex">
+                    <div class="Bgreen_check_wrap">
+                        <img class="Bgreen_check" src="img/spr_book2.png" alt="term check">
+                    </div>
                     <div id="terms_check">&#10003;</div>
                     <div>이용자 약관 전체동의</div>
                 </div>

@@ -28,4 +28,16 @@ public class ReservationController {
 		
 		return "makeReservation";
 	}
+	
+	@GetMapping(path="/checkingReservation")
+	public String checkReservation(@RequestParam(value="id", required=true)int id, ModelMap model) {
+		Reservation reservation = reservationService.getReservationInfo(id);
+		List<Price> priceList = reservationService.getRservationInfo_PriceInfo(id);
+		
+		model.put("id", id);
+		model.put("reservation", reservation);
+		model.put("list", priceList);
+		
+		return "checkReservation";
+	}
 }

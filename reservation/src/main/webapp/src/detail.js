@@ -17,10 +17,12 @@ function etcImageLoader(){
             if(httpRequest.readyState == 4 && httpRequest.status === 200){
                 var obj = httpRequest.response;
                 if(obj.img.length){
-                    document.getElementById("order").style.display = "block";
+                    document.getElementById("orderFlex").style.display = "flex";
+					// document.getElementById("titleFlex").style.justifyContent = "space-between";
                     document.querySelectorAll(".move").forEach((item)=>{
                         item.style.display = "block";
                     })
+					document.getElementById("title").style.width = "500px";
                     document.getElementById("carousel_2").src = obj.img[0].save_file_name; 
                     document.getElementById("carousel_4").src = obj.img[0].save_file_name; 
                     // document.getElementById("carousel_2").style.display = "block";
@@ -107,9 +109,15 @@ function goHome(){
 
 function expandDescription(){
     document.getElementById("expansion").addEventListener('click', ()=>{
-        var style = document.getElementById("description").style;
-        style.overflow = "visible";
-        style.height = "auto";
+        let descStyle = window.getComputedStyle(document.getElementById("description"));
+		let realStyle = document.getElementById("description").style;
+		if(descStyle.overflow === "hidden"){
+			realStyle.overflow = "visible";
+			realStyle.height = "auto";	
+		}else{
+			realStyle.overflow = "hidden";
+			realStyle.height = "5em"	
+		}
     })
 }
 

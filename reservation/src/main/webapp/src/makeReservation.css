@@ -182,14 +182,42 @@ table td{
   height: 40px;
 }
 
+.green_check_wrap{
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+}
+
+.green_check{
+  margin: -100px 0px 0px -315px;
+}
+
+.blank_check{
+  margin: -100px 0px 0px -500px;
+}
+
 #reservation_form label{
   color: gray;
 }
 
 #reservation_form input{
-  width: 80%;
+  width: 75%;
   height: 80%;
 }
+
+.term_title_flex{
+  display: flex;
+}
+
+.Bgreen_check_wrap{
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+
+/* .Bgreen_check{
+  margin: ;
+} */
 
 /* hr{
   height: 3px;
