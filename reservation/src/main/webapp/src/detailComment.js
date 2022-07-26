@@ -1,30 +1,29 @@
 window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("back").addEventListener('click', ()=>{
-        window.history.back();
-    })
-
+	goBack();
     commentLoad();
 })
 
+function goBack(){
+	document.getElementById("back").addEventListener('click', ()=>{
+        window.history.back();
+    })
+}
+
+let httpRequest, id, obj, div, innerHtml = "";
 function commentLoad(){
-    var httpRequest;
-    var id = document.getElementById("whole_wrap").parentElement.id;
+    // var httpRequest;
+    id = document.getElementById("whole_wrap").parentElement.id;
     httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = () => {
-        if(httpRequest.readyState === XMLHttpRequest.DONE){
-            if(httpRequest.readyState == 4 && httpRequest.status === 200){
-                var obj = httpRequest.response;
-                var div = document.createElement("div");
-				var innerHtml = "";
-				//innerHtml += bindTemplate(obj);
-				//console.log(innerHtml);
-                //div.innerHTML = innerHtml;
-                obj.forEach(function(item, index){
+        if(httpRequest.readyState === XMLHttpRequest.DONE){	// === 4
+            if(httpRequest.status === 200){
+                obj = httpRequest.response;
+                div = document.createElement("div");
+                obj.forEach(function(item){
                     innerHtml += bindTemplate(item);
                 })
 				div.innerHTML = innerHtml;
-				var node = document.querySelector("#comment_notice");
-        		node.parentNode.insertBefore(div, node);
+				document.querySelector("#comment_notice").before(div);
             }
         }
     }

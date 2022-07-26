@@ -141,7 +141,7 @@
                     <img id="route_map" src="${route.save_file_name}" alt="${route.place_name} map">
                     <div id="route_title">${detail.description}</div>
                     <div id="route_street">&#x1F4CD; ${route.place_street}</div>
-                    <div id="route_lot"><span id="route_lot_span">지번 </span>${route.place_lot}</div>
+                    <div id="route_lot"><span id="route_lot_span">&#129517; 지번 </span>${route.place_lot}</div>
                     <div id="route_place_name">${route.place_name}</div>
                     <div id="route_tel">&#x1F4DE; ${route.tel}</div>
                 </div>

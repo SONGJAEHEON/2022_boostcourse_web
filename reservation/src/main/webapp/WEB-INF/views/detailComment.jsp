@@ -7,16 +7,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>${detail.id}</title>
+    <title>comment ${detail.id}</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../src/detailComment.css" type="text/css">
     <link rel="stylesheet" href="../src/comment.css" type="text/css">
     <script src="../src/detailComment.js"></script>
 </head>
-<body id="${detail.id}"}>
+<body id="${detail.id}">
     <div id="whole_wrap">
         <nav>
-            <span id="back">&#8592;</span>
+            <span id="back">&#11013;</span>
             <span id="name">${detail.description}</span>
         </nav>
         <section id="review">
@@ -65,7 +65,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        var template = document.querySelector("#comment-template").innerText;
+        var template = document.querySelector("#comment-template").innerHTML;
         var bindTemplate = Handlebars.compile(template);
         //var resultHtml = "";
         //var obj = "${commentList}";

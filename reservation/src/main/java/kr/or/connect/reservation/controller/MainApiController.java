@@ -19,7 +19,7 @@ import kr.or.connect.reservation.service.MainService;
 
 @RestController
 @RequestMapping(path="/main")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="http://localhost:8080/reservation/*")
 public class MainApiController {
 	@Autowired
 	MainService mainService;

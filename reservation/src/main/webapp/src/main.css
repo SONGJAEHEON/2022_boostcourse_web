@@ -45,6 +45,7 @@ nav{
     float: right;
     margin: 7px;
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 #promo_wrap{
@@ -231,7 +232,7 @@ nav{
 }
 
 footer{
-    margin: 20px;
+    padding: 20px;
     text-align: center;
     color: rgb(90, 90, 90);
 }

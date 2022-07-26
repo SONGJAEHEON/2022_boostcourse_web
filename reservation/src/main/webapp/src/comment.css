@@ -17,6 +17,14 @@
     background-color: white;
 }
 
+#comment_score_title{
+	margin: 0px 20px;
+}
+
+#comment_wrap{
+	margin: 0px 20px;
+}
+
 #star_wrap1{
     margin: 10px 0px;
     width: 180px;

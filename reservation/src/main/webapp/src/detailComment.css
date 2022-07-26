@@ -9,18 +9,19 @@ body{
 
 #whole_wrap{
     width: 600px;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
 }
 
 nav{
-    margin: 5px 0px;
+    margin: 0px 0px 5px;
     height: 50px;
     background-color: white;
 }
 
 #back{
-    padding: 8px;;
+    padding: 8px;
     width: 100px;
     text-align: center;
     font-size: 2em;
@@ -37,5 +38,5 @@ nav{
 }
 
 #review{
-    margin: 5px 0px;
+    margin: 5px 0px 0px;
 }
